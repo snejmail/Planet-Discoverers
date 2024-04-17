@@ -1,0 +1,97 @@
+/* users/profile-edit-page.css */
+
+/* Center the edit-delete container vertically and horizontally */
+.edit-delete {
+    display: flex;
+    /*flex-direction: column; !* Change to column layout *!*/
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    margin: 20px;
+}
+
+/* Style the edit-delete container */
+.edit-delete .planet-details {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the content */
+}
+
+/* Style the edit and delete buttons */
+.edit-delete .edit-button,
+.edit-delete .delete-button {
+    margin: 10px; /* Reduce margin between buttons */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.edit-delete .edit-button:hover,
+.edit-delete .delete-button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the icon inside the buttons */
+.edit-delete .edit-img,
+.edit-delete .delete-img {
+    margin-right: 5px;
+    width: 20px; /* Adjust the width of the delete icon */
+    height: 20px; /* Adjust the height of the delete icon */
+}
+
+/* Style the "Edit planet" and "Delete planet" headings */
+.edit-delete h2 {
+    margin-bottom: 20px;
+}
+
+/* users/planet-delete-page.css */
+
+/* Center the delete confirmation box vertically and horizontally */
+.delete-confirmation-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 20px;
+}
+
+/* Style the delete confirmation box */
+.delete-confirmation-box {
+    width: 300px;
+    max-height: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the delete confirmation message */
+.delete-confirmation-box h2 {
+    margin-bottom: 20px;
+}
+
+/* Style the delete and cancel buttons */
+.delete-confirmation-box button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.delete-confirmation-box button:hover {
+    background-color: #0056b3;
+}
+
