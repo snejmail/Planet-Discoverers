@@ -1,0 +1,14 @@
+{% if widget.attrs.multiple %}
+<input type="file" name="{{ widget.name }}"> 
+    multiple="multiple" 
+    {% for name, value in widget.attrs.items %}
+  {% if name != 'multiple' %}
+    {{ name }}="{{ value|stringformat:'s' }}"
+  {% endif %}
+{% endfor %}>
+{% else %}
+<input type="file" name="{{ widget.name }}"> 
+    {% for name, value in widget.attrs.items %}
+  {{ name }}="{{ value|stringformat:'s' }}"
+{% endfor %}>
+{% endif %}

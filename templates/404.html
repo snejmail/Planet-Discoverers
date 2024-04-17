@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <div class="not-found-img">
+        <div class="error-content"></div>
+            <img src="{% static 'images/concept-404-error-web-page-with-astronaut-open-space-different-planets_145666-1261.jpg' %}" alt="404 not found gif">
+        </div>
+    
+        <div class="not-found">
+            <h1>
+                Uh oh,<br> looks like you are lost in space.
+            </h1>
+    
+            <h3>Error 404 - page not found.</h3>
+            <a href="{% url 'index' %}">
+                <button>Go back to home page</button>
+            </a>
+        </div>
+    </div>
+{% endblock %}}

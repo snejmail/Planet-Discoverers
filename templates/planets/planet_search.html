@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <title>Search for planets</title>
+    <body>
+        <h1>Planet Search</h1>
+    
+        <form action="{% url 'planet_search' %}" method="GET">
+            {{ form.as_p }}
+            <button type="submit">Search</button>
+        </form>
+    
+        {% if planets %}
+            <h2>Search Results for "{{ query }}:</h2>
+            <ul>
+                {% for planet in planets %}
+                    <li><a href="{% url 'details_planet' planet.discoverer.username planet.slug %}">{{ planet.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No planets found for "{{ query }}.</p>
+        {% endif %}
+    </body>
+{% endblock %}

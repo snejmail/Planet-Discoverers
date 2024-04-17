@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+
+<body>
+    <div class="add-photo-container">
+    <h4>Add new planet photo or graphic image</h4>
+    <form enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+        <button type="submit" class="btn-add-photo">Submit</button>
+    </form>
+    </div>
+</body>
+
+{% endblock %}

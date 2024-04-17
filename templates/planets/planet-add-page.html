@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <div class="add-planet-box">
+        <h2>Add Planet</h2>
+        <form action="{% url 'add_planet' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="name-field">Name:</label>
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                <label class="name-field">Type:</label>
+                {{ form.type }}
+            </div>
+            <div class="form-group">
+                <label class="name-field">In Habitable Zone:</label>
+                {{ form.in_habitable_zone }}
+            </div>
+            <div class="form-group">
+                <label class="name-field">Mass:</label>
+                {{ form.mass }}
+                <span class="help-text">(Mass of the planet compared to planet Earth - how many Earths is it?)</span>
+            </div>
+            <div class="form-group">
+                <label class="name-field">Description:</label>
+                {{ form.description }}
+                <span class="help-text">(Planet's characteristics, such as temperature, diameter, age, revolution, rotation, interesting facts, etc)</span>
+            </div>
+            <div class="form-group">
+                <label class="name-field">Discoverer:</label>
+                {{ form.discoverer }}
+            </div>
+            <div class="form-group">
+                <label class="name-field">Finding Method:</label>
+                {{ form.finding_method }}
+            </div>
+            <div class="form-group">
+                <label class="name-field">Photo:</label>
+                {{ form.photo }}
+            </div>
+            <button class="add-btn" type="submit">Add Planet</button>
+        </form>
+    </div>
+{% endblock %}

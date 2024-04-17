@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+{% load static %}
+
+    <title>Photo details</title>
+
+<body>
+<div class="photo-details">
+<h4>Photo details</h4>
+
+    {% if photo %}
+        <p class="planet-name">{{ photo.planet.name }}</p>
+        <img src="{{ photo.image_upload.url }}" alt="Planet photo" class="photo-img">
+        {% if photo.planet.finding_method == "Direct Imaging" %}
+            <span>Photo was taken in: {{ photo.location }}</span>
+        {% endif %}
+    
+    <div class="edit-delete-btns">
+        <a href="{% url 'edit_photo' photo.pk %}">
+            <img class="edit-img" src="{% static '/images/pencil_icon.png' %}" alt="edit button">
+        </a>
+        
+        <a href="{% url 'delete_photo' photo.pk %}">
+{#            <img class="delete-img" src="{% static 'images/bin_icon.png' %}" alt="delete-icon">#}
+        </a>
+    </div>
+    
+    <p class="photo-description"> {{ photo.description }}</p>
+    <h5 class="post-time">{{ photo.date_of_publication }}</h5>
+    {% endif %}
+</div>
+</body>
+
+{% endblock %}
