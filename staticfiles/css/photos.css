@@ -1,0 +1,34 @@
+.photo-details {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    margin: 100px auto;
+}
+
+.photo-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.photo-description {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+}
+
+.post-time {
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
+
+.planet-name {
+    font-size: 20px;
+    color: #666;
+}
+
