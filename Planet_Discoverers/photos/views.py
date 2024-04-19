@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from Planet_Discoverers.photos.models import Photo
 from Planet_Discoverers.photos.forms import PhotoForm
@@ -29,9 +29,27 @@ def details_photo(request, pk):
 
 
 def edit_photo(request, pk):
-    return render(request, 'photos/photo-edit-page.html')
+    photo = Photo.objects.get(pk=pk)
+    form = PhotoForm(instance=photo)
+
+    context = {
+        'photo': photo,
+        'form': form,
+    }
+
+    return render(request, 'photos/photo-edit-page.html', context)
 
 
 def delete_photo(request, pk):
-    return render(request, 'photos/photo-delete-page.html')
+    photo = get_object_or_404(Photo, pk=pk)
+
+    if request.method == "POST":
+        photo.delete()
+        return redirect('details_photo', pk=pk)
+
+    context = {
+        'photo': photo,
+    }
+
+    return render(request, 'photos/photo-delete-page.html', context)
 

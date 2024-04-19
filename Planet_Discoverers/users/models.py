@@ -19,7 +19,7 @@ class User(AbstractUser):
         blank=True,
         null=True,
     )
-    profile_picture = models.URLField(
+    profile_picture = models.ImageField(
         null=True,
         blank=True,
     )

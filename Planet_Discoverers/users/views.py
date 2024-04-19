@@ -32,6 +32,12 @@ class UserEditView(views.UpdateView):
     def get_success_url(self):
         return reverse_lazy('edit_user', kwargs={'pk': self.object.pk})
 
+    def form_valid(self, form):
+        if 'profile_picture' in self.request.FILES:
+            profile_picture = self.request.FILES['profile_picture']
+            self.object.profile_picture = profile_picture
+        return super().form_valid(form)
+
 
 def details_user(request, pk):
     user = User.objects.get(pk=pk)
