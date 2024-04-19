@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %} 
+{% block page_content %}
+    
+{% load static %}
+    
+<div class="user-details">
+    <h1>User Details</h1>
+    {% if user %}
+    <ul>
+        <li><strong>Username:</strong> {{ user.username }}</li>
+        <li><strong>Email:</strong> {{ user.email }}</li>
+        <li><strong>Country:</strong> {{ user.country }}</li>
+        <li><strong>Profile picture: </strong> {{ user.profile_picture }}</li>
+    </ul>
+    
+    <div class="edit-delete-btns">
+        <a href="{% url 'edit_user' user.pk %}">
+            <button class="edit-button" type="button">
+            <img class="edit-img" src="{% static 'images/pencil_icon.png' %}" alt="edit-icon">
+            Edit profile
+            </button>
+        </a>
+        <a href="{% url 'delete_user' user.pk %}">
+            <button class="delete-button" type="button">
+            <img class="delete-img" src="{% static 'images/bin_icon.png' %}" alt="delete-icon">
+            Delete profile
+            </button>
+        </a>
+    </div>
+    {% else %}
+    <p>No user found.</p>
+    {% endif %}
+    
+    <div class="back-link">
+        <a href="{% url 'index' %}">Back to Home</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+
+<body>
+    <div class="add-photo-container">
+        <div class="add-photo-box">
+            <h4>Add new planet photo or graphic image</h4>
+            <form class="add-photo-form" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_image_upload">Photo:</label>
+                    {{ form.image_upload }}
+                </div>
+                <div class="form-group">
+                    <label for="id_description">Description:</label>
+                    {{ form.description }}
+                </div>
+                <button type="submit" class="btn-add-photo">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

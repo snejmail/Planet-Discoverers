@@ -1,0 +1,133 @@
+.edit-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    margin: 20px;
+}
+
+.edit-delete .planet-details {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.edit-delete-btns .edit-button,
+.edit-delete-btns .delete-button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.edit-delete-btns .edit-button:hover,
+.edit-delete-btns .delete-button:hover {
+    background-color: #0056b3;
+}
+
+.edit-delete-btns .edit-img,
+.edit-delete-btns .delete-img {
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.edit-delete h2 {
+    margin-bottom: 20px;
+}
+
+.delete-confirmation-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 20px;
+    width: 300px;
+    max-height: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.delete-confirmation-box h2 {
+    margin-bottom: 20px;
+}
+
+.delete-confirmation-box button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.delete-confirmation-box button:hover {
+    background-color: #0056b3;
+}
+
+.post-time {
+    margin-top: 20px;
+}
+
+.delete-img {
+    width: 30px;
+    height: 30px;
+}
+
+.edit-delete-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 60vh;
+}
+
+.edit-delete-box h2 {
+    margin-bottom: 20px;
+}
+
+.edit-delete-box h4 {
+    margin-bottom: 20px;
+}
+
+.edit-delete-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.edit-delete-box input[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    cursor: pointer;
+}
+
+.edit-delete-box input[type="submit"]:hover {
+    background-color: #c82333;
+}

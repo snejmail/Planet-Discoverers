@@ -1,0 +1,33 @@
+.user-details {
+    margin: 50px auto; /* Center the form window vertically with more space around it */
+    max-width: 500px; /* Limit the width of the form window */
+    padding: 20px; /* Add padding around the form window */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Ensure all items in the form window are left-aligned */
+}
+
+.user-details h1 {
+    text-align: left; /* Center the heading within the form window */
+    margin-bottom: 20px; /* Add some space below the heading */
+}
+
+.user-details ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+}
+
+.user-details ul li {
+    margin-bottom: 10px; /* Add some space between list items */
+}
+
+.user-details .edit-delete-btns {
+    margin-top: 20px; /* Add some space above the buttons */
+}
+
+.back-link {
+    margin-top: 20px; /* Add some space above the back link */
+    text-align: center; /* Center the back link */
+}

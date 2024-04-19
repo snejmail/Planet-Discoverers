@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <div class="container">
+        <div class="col-9">
+            <form class="searchbar" type="search" action="{% url 'planet_search' %}" name="q" method="get" >
+                {{ search_form.as_p }}
+                <button class="search-button" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>                   
+                </button>
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
+{% endblock %}

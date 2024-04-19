@@ -1,0 +1,86 @@
+.photo-details {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    margin: 100px auto;
+}
+
+.photo-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.photo-description {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+}
+
+.post-time {
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
+
+.planet-name {
+    font-size: 20px;
+    color: #666;
+}
+
+.add-photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.add-photo-box {
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-photo-box h4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.add-photo-form .form-group {
+    margin-bottom: 20px;
+}
+
+.add-photo-form label {
+    display: block;
+    font-weight: bold;
+}
+
+.add-photo-form input[type="file"],
+.add-photo-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-photo-form button[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-photo-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}

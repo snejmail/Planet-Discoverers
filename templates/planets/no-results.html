@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <div class="results-container">
+        <div class="text-center">
+            <h3>No planets to display.</h3>
+            <a href="{% url 'index' %}" class="home-btn">Go to Home Page</a>
+        </div>
+    </div>
+{% endblock %}

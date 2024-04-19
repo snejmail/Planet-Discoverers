@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %} 
+{% block page_content %} 
+
+<div class="edit-delete">
+    <div class="edit-delete-box">
+        <h2>Delete Profile</h2>
+        <h4>Are you sure you want to delete your profile?</h4>
+        <form action="{% url 'delete_user' pk=profile.pk %}" method="post">
+            {% csrf_token %}
+            <input class="btn-submit" type="submit" value="Yes">
+            {{ form.as_p }}
+        </form>
+    </div>
+</div>
+
+{% endblock %}
