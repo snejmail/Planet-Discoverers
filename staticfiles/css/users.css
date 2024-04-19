@@ -1,0 +1,33 @@
+.user-details {
+    margin: 50px auto;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.user-details h1 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.user-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.user-details ul li {
+    margin-bottom: 10px;
+}
+
+.user-details .edit-delete-btns {
+    margin-top: 20px;
+}
+
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+}
