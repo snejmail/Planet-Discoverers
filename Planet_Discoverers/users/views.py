@@ -1,8 +1,6 @@
 from django.urls import reverse_lazy
 from django.views import generic as views
-from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth import views as auth_views
 
 from Planet_Discoverers.users.forms import UserRegisterForm, UserLoginForm, UserEditForm, UserDeleteForm
@@ -20,49 +18,6 @@ class UserLoginView(auth_views.LoginView):
     form_class = UserLoginForm
     template_name = 'users/login-page.html'
     next_page = reverse_lazy('index')
-
-
-# def login_user(request):
-#     if request.method == "POST":
-#         form = UserLoginForm(request, data=request.POST)
-#         if form.is_valid():
-#             username = form.cleaned_data['username']
-#             password = form.cleaned_data['password']
-#             user = authenticate(request, username=username, password=password)
-#             if user is not None:
-#                 login(request, user)
-#                 return redirect('index')
-#     else:
-#         form = UserLoginForm()
-#
-#     context = {
-#         'form': form,
-#     }
-#
-#     return render(request, 'users/login-page.html', context)
-
-
-# def register_user(request):
-#     if request.method == 'POST':
-#         form = UserRegisterForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             username = form.cleaned_data.get('username')
-#             messages.success(request, f'Account created for {username}')
-#             return redirect('login_user')
-#     else:
-#         form = UserRegisterForm()
-#
-#     context = {
-#         'form': form
-#     }
-#
-#     return render(request, 'users/register-page.html', context)
-
-
-# def logout_user(request):
-#     logout(request)
-#     return redirect('index')
 
 
 class UserLogoutView(auth_views.LogoutView):

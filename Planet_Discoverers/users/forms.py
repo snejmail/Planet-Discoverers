@@ -33,15 +33,6 @@ class UserRegisterForm(UserCreationForm):
 
 
 class UserLoginForm(AuthenticationForm):
-    # def __init__(self, *args, **kwargs):
-    #     super(UserLoginForm, self).__init__(*args, **kwargs)
-    #     self.fields['username'].widget.attrs.update({
-    #         'class': 'form-control'
-    #     })
-    #     self.fields['password'].widget.attrs.update({
-    #         'class': 'form-control'
-    #     })
-
     username = UsernameField(widget=forms.TextInput(attrs={'autofocus': True}))
     password = forms.CharField(
         strip=False,

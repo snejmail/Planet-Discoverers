@@ -19,12 +19,6 @@ class User(AbstractUser):
         blank=True,
         null=True,
     )
-    # password = models.CharField(
-    #     max_length=150,
-    #     validators=[MinLengthValidator(8)],
-    #     blank=False,
-    #     null=False,
-    # )
     profile_picture = models.URLField(
         null=True,
         blank=True,
