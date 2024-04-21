@@ -10,7 +10,12 @@
         <li><strong>Username:</strong> {{ user.username }}</li>
         <li><strong>Email:</strong> {{ user.email }}</li>
         <li><strong>Country:</strong> {{ user.country }}</li>
-        <li><strong>Profile picture: </strong> {{ user.profile_picture }}</li>
+        {% if user.profile_picture %}
+            <li>
+                <strong>Profile picture:</strong>
+                <img src="{{ user.profile_picture }}" alt="Profile Picture">
+            </li>
+{% endif %}
     </ul>
     
     <div class="edit-delete-btns">

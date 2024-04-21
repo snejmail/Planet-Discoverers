@@ -5,18 +5,22 @@ from Planet_Discoverers.photos.forms import PhotoForm
 
 
 def add_photo(request):
-    form = PhotoForm(request.POST or None)
-    if form.is_valid():
-        photo = form.save(commit=False)
-        photo.user = request.user
-        photo.save()
-        return redirect('details_photo', pk=form.instance.pk)
+    if request.method == 'POST':
+        form = PhotoForm(request.POST or None)
+        if form.is_valid():
+            photo = form.save(commit=False)
+            photo.user = request.user
+            photo.save()
+            return redirect('details_photo', pk=form.instance.pk)
+
+    else:
+        form = PhotoForm()
 
     context = {
         'form': form,
     }
 
-    return render(request, 'photos/photo-add-page.html', context=context)
+    return render(request, 'photos/photo-add-page.html', context)
 
 
 def details_photo(request, pk):
@@ -30,7 +34,13 @@ def details_photo(request, pk):
 
 def edit_photo(request, pk):
     photo = Photo.objects.get(pk=pk)
-    form = PhotoForm(instance=photo)
+    if request.method == 'POST':
+        form = PhotoForm(request.POST, instance=photo)
+        if form.is_valid():
+            form.save()
+            return redirect('details_photo', pk=pk)
+    else:
+        form = PhotoForm(instance=photo)
 
     context = {
         'photo': photo,

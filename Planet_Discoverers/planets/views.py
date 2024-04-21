@@ -24,7 +24,7 @@ def add_planet(request):
         'form': form,
     }
 
-    return render(request, 'planets/planet-add-page.html', context=context)
+    return render(request, 'planets/planet-add-page.html', context)
 
 
 def details_planet(request, pk):

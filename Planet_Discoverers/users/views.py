@@ -30,7 +30,7 @@ class UserEditView(views.UpdateView):
     template_name = 'users/profile-edit-page.html'
 
     def get_success_url(self):
-        return reverse_lazy('edit_user', kwargs={'pk': self.object.pk})
+        return reverse_lazy('details_user', kwargs={'pk': self.object.pk})
 
     def form_valid(self, form):
         if 'profile_picture' in self.request.FILES:
@@ -49,15 +49,15 @@ def details_user(request, pk):
 
 
 def delete_user(request, pk):
-    profile = User.objects.first()
-    form = UserDeleteForm(instance=profile)
+    user = User.objects.first()
+    form = UserDeleteForm(instance=user)
 
     if request.method == 'POST':
-        profile.delete()
+        user.delete()
         return redirect('index')
 
     context = {
-        'profile': profile,
+        'user': user,
         'form': form,
     }
 
