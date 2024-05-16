@@ -39,11 +39,17 @@
 
 <footer class="footer">
     <div class="container text-center">
-        <span class="text-muted">© 2024 Planet Discoverers</span>
+        <span class="text-muted">© <span id="currentYear"></span> Planet Discoverers</span>
     </div>
 </footer>
 
+<script>
+    var currentYear = new Date().getFullYear();
+    document.getElementById("currentYear").innerHTML = currentYear;
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 
 </body>
 

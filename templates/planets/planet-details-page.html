@@ -2,32 +2,92 @@
 {% load static %}
 
 {% block page_content %}
-    <title>Planet details</title>
-    
+<title>Planet details</title>
+
 <body>
     <div class="planet-details">
-        <div class="planet-image">
-            <h2>{{ planet.name }}</h2>
-            {% if planet.photo %}
-                <img src="{{ planet.photo.url }}" alt="Photo">
-            {% else %}
-                <p>No photo available for this planet.</p>
+        <div class="planet-form">
+            <div class="planet-image">
+                <h2>{{ planet.name }}</h2>
+                {% if primary_photo or all_photos %}
+                    <div class="photo-grid">
+                        {% if primary_photo %}
+                            <div class="photo-container">
+                                <img src="{{ primary_photo.url }}" alt="Primary Photo" class="planet-photo">
+                            </div>
+                        {% endif %}
+                        {% if all_photos %}
+                            {% for photo in all_photos %}
+                                <div class="photo-container">
+                                    <img src="{{ photo.image_upload.url }}" alt="Photo" class="planet-photo">
+                                    {% if user == planet.discoverer %}
+                                        <form method="POST" action="{% url 'delete_photo' photo.pk %}">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn-delete-photo">Delete photo</button>
+                                        </form>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <p>No photo available for this planet.</p>
+                {% endif %}
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <p><strong>Name:</strong> {{ planet.name }}</p>
+                </div>
+
+                <div class="form-group">
+                    <p><strong>Type:</strong> {{ planet.type }}</p>
+                </div>
+
+                <div class="form-group">
+                    <p><strong>In Habitable Zone:</strong> {{ planet.in_habitable_zone }}</p>
+                </div>
+
+                <div class="form-group">
+                    <p><strong>Mass:</strong> {{ planet.mass }}</p>
+                </div>
+
+                <div class="form-group">
+                    <p><strong>Description:</strong> {{ planet.description }}</p>
+                </div>
+
+                <div class="form-group">
+                    <p><strong>Finding Method:</strong> {{ planet.finding_method }}</p>
+                </div>
+
+                {% if user == planet.discoverer %}
+                <div class="edit-delete-btns">
+                    <a href="{% url 'edit_planet' planet.id %}">
+                        <button class="edit-button" type="button">
+                            <img class="edit-img" src="{% static 'images/pencil_icon.png' %}" alt="edit-icon">
+                            Edit planet
+                        </button>
+                    </a>
+                    <a href="{% url 'delete_planet' planet.id %}">
+                        <button class="delete-button" type="button">
+                            <img class="delete-img" src="{% static 'images/bin_icon.png' %}" alt="delete-icon">
+                            Delete planet
+                        </button>
+                    </a>
+                </div>
+                {% endif %}
+            </form>
+
+            {% if user == planet.discoverer %}
+                <div class="text-center-upload-photo-btn">
+                    <div class="upload-photo-btn">
+                        <a href="{% url 'add_photo' pk=planet.id %}" class="btn btn-primary">
+                            <i class="fas fa-upload"></i> Upload New Photo
+                        </a>
+                    </div>
+                </div>
             {% endif %}
-        </div>
-    
-        <div class="edit-delete-btns">
-            <a href="{% url 'edit_planet' planet.id %}">
-                <button class="edit-button" type="button">
-                <img class="edit-img" src="{% static 'images/pencil_icon.png' %}" alt="edit-icon">
-                Edit planet
-                </button>
-            </a>
-            <a href="{% url 'delete_planet' planet.id %}">
-                <button class="delete-button" type="button">
-                <img class="delete-img" src="{% static 'images/bin_icon.png' %}" alt="delete-icon">
-                Delete planet
-                </button>
-            </a>
+
         </div>
     </div>
 </body>

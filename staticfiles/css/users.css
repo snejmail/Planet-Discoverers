@@ -31,3 +31,44 @@
     margin-top: 20px;
     text-align: center;
 }
+
+.email-greeting-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.email-greeting-container .content {
+    text-align: center;
+    color: #f5dd5d;
+}
+
+.email-greeting-container .image-container {
+    margin-top: 20px;
+}
+
+.email-greeting-container .image {
+    width: 100%;
+    max-width: 400px;
+}
+
+.email-greeting-container .text {
+    margin-top: 20px;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.email-greeting-container .signature {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.email-greeting-container .icon-container {
+    margin-top: 20px;
+}
+
+.email-greeting-container .icon {
+    width: 50px;
+}

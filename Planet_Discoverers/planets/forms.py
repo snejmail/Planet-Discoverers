@@ -1,6 +1,11 @@
+from django.contrib.auth.forms import UserCreationForm
+from django.core.exceptions import ValidationError
+
+from Planet_Discoverers.users.models import User
+from django.forms import ModelForm
 from django import forms
 
-from Planet_Discoverers.planets.models import Planet
+from Planet_Discoverers.planets.models import Planet, Photo
 
 
 class PlanetForm(forms.ModelForm):
@@ -8,6 +13,13 @@ class PlanetForm(forms.ModelForm):
     class Meta:
         model = Planet
         fields = '__all__'
+
+    def clean(self):
+        cleaned_data = super().clean()
+        finding_method = cleaned_data.get('finding_method')
+        primary_photo = cleaned_data.get('primary_photo')
+        if finding_method == 'Direct Imaging' and not primary_photo:
+            raise ValidationError("Photo must be provided for planets found through direct imaging.")
 
 
 class PlanetSearchForm(forms.Form):
@@ -20,3 +32,16 @@ class PlanetSearchForm(forms.Form):
     )
 
 
+class PhotoForm(ModelForm):
+
+    class Meta:
+        model = Photo
+        fields = ['image_upload']
+
+
+class UserRegistrationForm(UserCreationForm):
+    photo = forms.ImageField(required=False)
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2', 'photo']

@@ -1,7 +1,8 @@
 @import 'home_page.css';
-@import "login-register.css";
-@import "planets.css";
+@import 'login-register.css';
+@import 'planets.css';
 @import 'photos.css';
 @import 'edit-delete.css';
 @import 'users.css';
-@import 'search.css';
+@import 'search.css';@import '404.css';
+@import "catalogue.css";

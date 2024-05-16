@@ -14,10 +14,12 @@ class UserRegisterView(views.CreateView):
     success_url = reverse_lazy('login_user')
 
 
-class UserLoginView(auth_views.LoginView):
+class CustomLoginView(auth_views.LoginView):
+    model = User
     form_class = UserLoginForm
     template_name = 'users/login-page.html'
-    next_page = reverse_lazy('index')
+    # next_page = reverse_lazy('index')
+    success_url = reverse_lazy('email_greeting')
 
 
 class UserLogoutView(auth_views.LogoutView):
@@ -62,3 +64,10 @@ def delete_user(request, pk):
     }
 
     return render(request, 'users/profile-delete-page.html', context)
+
+
+def email_greeting(request):
+    context = {
+        'user': request.user
+    }
+    return render(request, 'email-greeting.html', context)

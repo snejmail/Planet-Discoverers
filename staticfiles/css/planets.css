@@ -1,68 +1,70 @@
 .planet-details {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
-.planet-details h2 .planet-details p {
-    color: #a9ff56;
+.planet-form {
+    width: 50%;
+    max-height: calc(100vh - 40px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    margin: 0 auto;
 }
 
-.planet-image {
-    text-align: center;
-    margin-bottom: 20px;
+.planet-form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-.planet-image img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #f5dd5d;
+.planet-form .form-group {
+    margin: 0 auto;
+}
+
+.planet-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.planet-form input[type="text"],
+.planet-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    max-font-size: 20;
-    max-height: 300px;
 }
 
-.edit {
-    margin-top: 20px;
+.planet-form textarea {
+    height: 120px;
 }
 
-.edit-img {
-    width: 30px;
-    height: 30px;
+.planet-details h2 {
+    font-weight: bold;
+    font-style: italic;
+    background: linear-gradient(to right, rgba(0, 22, 225, 0.86) 0%, #7fff01 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
-.planet-photos {
-    margin-top: 20px;
+.edit-delete-btns {
+    display: flex;
+    justify-content: space-between;
 }
 
-.planet-photos h2 {
-    margin-bottom: 10px;
-}
-
-.planet-photos ul {
-    list-style: none;
-    padding: 0;
-}
-
-.planet-photos li {
-    margin-bottom: 20px;
-}
-
-.planet-photos li img {
-    max-width: 100%;
-    height: auto;
-}
-
-.planet-photos li p {
-    margin-top: 10px;
-}
-
-.planet-details button {
-    display: inline-flex;
+.edit-delete-btns button {
+    display: flex;
     align-items: center;
     padding: 5px 10px;
+    font-size: 16px;
     background-color: #ffc67b;
     color: white;
     border: none;
@@ -71,73 +73,62 @@
     transition: background-color 0.3s;
 }
 
-.edit-button:hover {
+.edit-delete-btns button:hover {
     background-color: #0056b3;
 }
 
-.planet-details button img {
-    margin-right: 20px;
+.edit-delete-btns button img {
+    margin-right: 10px;
 }
 
-.add-planet-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 250px);
-    margin: 50px 0;
-}
-
-.add-planet-box {
-    width: 400px;
-    padding: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.add-planet-box form .form-group {
-    margin-bottom: 10px;
-}
-
-.add-planet-box form .form-group label {
+.planet-image {
     display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+    margin: 20px 0;
 }
 
-.add-planet-box form input[type="text"],
-.add-planet-box form input[type="email"],
-.add-planet-box form input[type="password"],
-.add-planet-box form select,
-.add-planet-box form textarea {
-    width: calc(100% - 20px);
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
-.add-planet-box form textarea {
-    height: 100px;
+.photo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(50% - 10px); /* Adjust the width if you need 2 per row with a gap */
+    margin-bottom: 20px;
 }
 
-.add-planet-box form button[type="submit"] {
-    width: calc(100% - 20px);
-    padding: 10px;
+.photo-container img {
+    width: 100%;
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensures images maintain aspect ratio */
+}
+
+.btn-delete-photo {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #ffc67b;
+    color: white;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.add-planet-box form button[type="submit"]:hover {
+.btn-delete-photo:hover {
     background-color: #0056b3;
 }
 
-.add-planet-box form .help-text {
-    font-size: 12px;
-    color: #666;
+.upload-photo-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.upload-photo-btn a {
+    margin: 0 10px;
 }

@@ -1,4 +1,7 @@
+from django.core.exceptions import ValidationError
+
 from Planet_Discoverers.users.models import User
+from django.conf import settings
 from django.core.validators import MinLengthValidator
 from django.db import models
 from django.utils.text import slugify
@@ -51,7 +54,7 @@ class Planet(models.Model):
                   "interesting facts, etc)"
     )
     discoverer = models.ForeignKey(
-        User,
+        settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
     finding_method = models.CharField(
@@ -60,9 +63,10 @@ class Planet(models.Model):
         blank=False,
         choices=FINDING_METHODS,
     )
-    photo = models.ImageField(
+    primary_photo = models.ImageField(
         blank=True,
         null=True,
+        upload_to='planet_images'
     )
     slug = models.SlugField(
         unique=True,
@@ -78,4 +82,36 @@ class Planet(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Photo(models.Model):
+    id = models.AutoField(
+        primary_key=True
+    )
+    planet = models.ForeignKey(
+        Planet,
+        related_name='photos',
+        on_delete=models.CASCADE,
+        null=True,
+    )
+    image_upload = models.ImageField(
+        upload_to='planet_images',
+        default='',
+    )
+    description = models.TextField(
+        max_length=300,
+        validators=[MinLengthValidator(10),],
+        blank=True,
+        null=True,
+    )
+    location = models.CharField(
+        max_length=30,
+        blank=True,
+        null=True,
+        help_text='Observatory location, only if finding method is Direct Imaging',
+    )
+    date_of_publication = models.DateField(
+        auto_now=True,
+    )
+
 

@@ -1,37 +1,3 @@
-.photo-details {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 400px;
-    margin: 100px auto;
-}
-
-.photo-img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.photo-description {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #666;
-    text-align: center;
-}
-
-.post-time {
-    font-size: 14px;
-    color: #999;
-    text-align: center;
-}
-
-.planet-name {
-    font-size: 20px;
-    color: #666;
-}
-
 .add-photo-container {
     display: flex;
     justify-content: center;
@@ -83,4 +49,47 @@
 
 .add-photo-form button[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+.photo-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.photo-container img {
+    display: block;
+    width: 100%;
+    max-width: 300px; /* Ensure consistent size */
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.photo-container .btn-delete-photo {
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: fit-content;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #ffc67b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.photo-container .btn-delete-photo:hover {
+    background-color: #0056b3;
+}
+
+.photo-container .btn-delete-photo img {
+    margin-right: 10px;
 }

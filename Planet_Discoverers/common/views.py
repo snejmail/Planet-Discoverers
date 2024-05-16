@@ -11,3 +11,7 @@ def index(request):
     }
 
     return render(request, 'base/home-page.html', context)
+
+
+def custom_404_view(request, exception=None):
+    return render(request, '404.html', status=404)

@@ -6,12 +6,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{% url 'index' %}">Home</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'add_planet' %}">Add Planet</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'add_photo' %}">Add Photo</a>
-        </li>
+    
         {% if not request.user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'login_user' %}">Login</a>
@@ -22,6 +17,12 @@
         {% else %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'details_user' request.user.pk %}">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'catalogue' %}">Catalogue</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'add_planet' %}">Add Planet</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout_user' %}">Logout</a>

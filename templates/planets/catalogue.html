@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+{% load static %}
+    
+    <div class="planet-catalogue">
+        <h1>Catalogue</h1>    
+        <div class="planet-list">
+            {% for planet in user_planets %}
+                <div class="planet">
+                    <a href="{% url 'details_planet' planet.pk %}">
+                        <h4>{{ planet.name }}</h4>
+                        <img src="{{ planet.primary_photo.url }}" alt="{{ planet.name }}">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{%  endblock %}

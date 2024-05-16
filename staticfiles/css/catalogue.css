@@ -1,0 +1,42 @@
+.planet-catalogue h1 {
+    color: yellow;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.planet-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.planet-list a {
+    text-decoration: none;
+}
+
+.planet-list h4:hover {
+    color: #007bff;
+}
+
+.planet-list h4 {
+    color: yellow;
+}
+
+.planet-list h4:hover {
+    text-decoration: none;
+}
+
+.planet-list .planet {
+    width: calc(33.33% - 30px);
+    height: calc(33.33% - 30px);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.planet-list .planet img {
+    width: 100%;
+    height: auto;
+}

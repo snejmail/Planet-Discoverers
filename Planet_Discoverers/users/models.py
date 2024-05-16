@@ -4,6 +4,7 @@ from django.db import models
 
 
 class User(AbstractUser):
+    pass
     username = models.CharField(
         max_length=150,
         validators=[MinLengthValidator(3)],
@@ -23,6 +24,7 @@ class User(AbstractUser):
         null=True,
         blank=True,
     )
+    USERNAME_FIELD = 'username'
 
     def __str__(self):
         return self.username
@@ -30,7 +32,8 @@ class User(AbstractUser):
     class Meta:
         verbose_name = 'User'
         verbose_name_plural = 'Users'
+        db_table = 'auth_user'
 
 
-User._meta.get_field('groups').remote_field.related_name = 'user_groups'
-User._meta.get_field('user_permissions').remote_field.related_name = 'user_permissions_set'
+# User._meta.get_field('groups').remote_field.related_name = 'user_groups'
+# User._meta.get_field('user_permissions').remote_field.related_name = 'user_permissions_set'

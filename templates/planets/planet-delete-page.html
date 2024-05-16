@@ -4,10 +4,14 @@
 
     <div class="delete-confirmation-box">
         <h2>Are you sure you want to delete {{ planet.name }}?</h2>
-        <form method="post">
-            {% csrf_token %}
-            <button type="submit">Yes</button>
-        </form>
-        <a href="{% url 'details_planet' planet.id %}"><button>No</button></a>
+        <div class="button-container">
+            <form method="post" style="display: inline-block;">
+                {% csrf_token %}
+                <button type="submit">Yes</button>
+            </form>
+            <a href="{% url 'details_planet' planet.id %}" style="display: inline-block;">
+                <button>No</button>
+            </a>
+        </div>
     </div>
 {% endblock %}

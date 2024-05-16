@@ -50,8 +50,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 20px;
+    height: 60vh;
+    margin: 50px auto;
     width: 300px;
     max-height: 300px;
     padding: 20px;
@@ -59,6 +59,17 @@
     border-radius: 10px;
     background-color: #f9f9f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/*.delete-confirmation-box form {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    width: 100%;*/
+/*}*/
+.delete-confirmation-box form,
+.delete-confirmation-box a {
+    display: inline-block;
+    margin-right: 10px; /* Add margin between the buttons if needed */
 }
 
 .delete-confirmation-box h2 {
@@ -73,6 +84,10 @@
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
+}
+
+.button-container {
+    display: inline-block;
 }
 
 .delete-confirmation-box button:hover {
@@ -227,9 +242,6 @@ p.have-account > a {
     vertical-align: baseline;
 }
 
-/* Styling for text */
 .edit-delete-box-photo form label {
     color: darkgreen;
 }
-
-
