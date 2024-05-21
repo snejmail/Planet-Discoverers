@@ -1,0 +1,67 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <title>Planet Details</title>
+    
+    <body>
+        <div class="planet-details">
+            <h2 class="planet-name">{{ planet.name }}</h2>
+            <div class="planet-info">
+                <div class="planet-primary-photo">
+                    {% if primary_photo %}
+                        <img src="{{ primary_photo.url }}" alt="Primary Photo">
+                    {% else %}
+                        <p>No primary photo available for this planet.</p>
+                    {% endif %}
+                </div>
+                
+                <div class="planet-data">
+                    <p><strong>Name:</strong> {{ planet.name }}</p>
+                    <p><strong>Type:</strong> {{ planet.type }}</p>
+                    <p><strong>In Habitable Zone:</strong> {{ planet.in_habitable_zone }}</p>
+                    <p><strong>Mass:</strong> {{ planet.mass }}</p>
+                    <p><strong>Description:</strong> {{ planet.description }}</p>
+                    <p><strong>Discoverer:</strong> {{ planet.discoverer }}</p>
+                    <p><strong>Finding Method:</strong> {{ planet.finding_method }}</p>
+                </div>
+            </div>
+        
+            {% if user == planet.discoverer %}
+                <div class="edit-delete-btns">
+                    <a href="{% url 'edit_planet' planet.id %}">
+                        <button class="edit-button" type="button">
+                            <img class="edit-img" src="{% static 'images/pencil_icon.png' %}" alt="edit-icon">
+                            Edit planet
+                        </button>
+                    </a>
+                    <a href="{% url 'delete_planet' planet.id %}">
+                        <button class="delete-button" type="button">
+                            <img class="delete-img" src="{% static 'images/bin_icon.png' %}" alt="delete-icon">
+                            Delete planet
+                        </button>
+                    </a>
+                </div>
+                
+                <div class="upload-photo-section">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="upload-row">
+                            <label for="id_image_upload">Upload New Photo:</label>
+                            {{ photo_form.image_upload }}
+                        </div>
+                        <div class="upload-button-wrapper">
+                            <button type="submit" class="upload-button">Upload Photo</button>
+                        </div>
+                    </form>
+                </div>
+
+                
+                <div class="pagination">
+                    <a href="{% url 'planet_photos' planet.pk %}?page=1">More photos</a>
+                </div>
+                
+            {% endif %}
+        </div>
+    </body>
+{% endblock %}

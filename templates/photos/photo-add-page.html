@@ -9,14 +9,6 @@
             <form class="add-photo-form" method="POST" action="{% url 'add_photo' pk=planet.id %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}
-{#                <div class="form-group">#}
-{#                    <label for="id_image_upload">Photo:</label>#}
-{#                    {{ form.image_upload }}#}
-{#                </div>#}
-{#                <div class="form-group">#}
-{#                    <label for="id_description">Description:</label>#}
-{#                    {{ form.description }}#}
-{#                </div>#}
                 <button type="submit" class="btn-add-photo">Submit</button>
             </form>
         </div>

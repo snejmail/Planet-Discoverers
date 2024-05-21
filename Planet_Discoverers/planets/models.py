@@ -68,6 +68,9 @@ class Planet(models.Model):
         null=True,
         upload_to='planet_images'
     )
+    is_duplicate = models.BooleanField(
+        default=False,
+    )
     slug = models.SlugField(
         unique=True,
         null=False,

@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+<title>Planet Details - Photos Page {{ page_number }}</title>
+
+<div class="planet-details">
+    <h2 class="planet-name">{{ planet.name }}</h2>
+
+    <div class="photo-grid">
+        {% for photo in photos_page %}
+        <div class="photo-container">
+            <img src="{{ photo.image_upload.url }}" alt="Photo" class="planet-photo">
+            <form method="post" action="{% url 'delete_photo' planet.pk photo.pk %}">
+                {% csrf_token %}
+                <button type="submit" class="btn-delete-photo">Delete Photo</button>
+            </form>
+        </div>
+
+        {% endfor %}
+    </div>
+
+    <div class="pagination">
+        {% if photos_page.has_previous %}
+        <a href="{% url 'planet_photos' planet.pk %}?page={{ photos_page.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% if photos_page.has_next %}
+        <a href="{% url 'planet_photos' planet.pk %}?page={{ photos_page.next_page_number }}">Next</a>
+        {% endif %}
+    </div>
+
+<div class="pagination">
+    <a href="{% url 'details_planet' planet.pk %}" class="btn-previous-page">Go back to planet's info</a>
+</div>
+</div>
+{% endblock %}

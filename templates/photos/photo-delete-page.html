@@ -5,7 +5,7 @@
     <div class="edit-delete-box">
         <h2>Delete Photo</h2>
         <p>Are you sure you want to delete this photo?</p>
-        <form action="{% url 'delete_photo' pk=photo.pk %}" method="post">
+            <form method="post" action="{% url 'delete_photo' planet.pk photo.pk %}">
             {% csrf_token %}
             <input type="submit" class="btn-delete" value="Delete">
         </form>

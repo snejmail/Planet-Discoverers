@@ -39,6 +39,10 @@ class PhotoForm(ModelForm):
         fields = ['image_upload']
 
 
+class PhotoUploadForm(forms.Form):
+    photo = forms.FileField(label='Select a photo')
+
+
 class UserRegistrationForm(UserCreationForm):
     photo = forms.ImageField(required=False)
 

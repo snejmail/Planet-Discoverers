@@ -1,0 +1,384 @@
+.planet-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.planet-name {
+    font-weight: bold;
+    font-style: italic;
+    background: linear-gradient(to right, rgba(0, 22, 225, 0.86) 0%, #7fff01 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.planet-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.planet-primary-photo {
+    flex: 1 1 auto;
+    max-width: 50%;
+    /*text-align: center;*/
+}
+
+.planet-primary-photo img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.planet-data {
+    flex: 1 1 auto;
+    max-width: 45%;
+}
+
+.planet-data p {
+    margin: 10px 0;
+    color: yellow;
+    font-size: 20px;
+}
+
+.planet-form {
+    width: 50%;
+    max-height: calc(100vh - 40px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    margin: 0 auto;
+}
+
+.planet-form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.planet-form .form-group {
+    margin: 0 auto;
+}
+
+.planet-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.planet-form input[type="text"],
+.planet-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.planet-form textarea {
+    height: 120px;
+}
+
+.planet-details h2 {
+    font-weight: bold;
+    font-style: italic;
+    background: linear-gradient(to right, rgba(0, 22, 225, 0.86) 0%, #7fff01 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.edit-delete-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.edit-delete-btns button {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #ffc67b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-delete-btns button:hover {
+    background-color: #0056b3;
+}
+
+.edit-delete-btns button img {
+    margin-right: 10px;
+}
+
+.planet-image {
+    display: block;
+    margin: 20px 0;
+}
+
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.photo-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.photo-container img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.btn-delete-photo {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #ffc67b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-delete-photo:hover {
+    background-color: #0056b3;
+}
+
+.upload-photo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.upload-photo-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.upload-row label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+}
+
+.upload-photo-section input[type="file"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.upload-button-wrapper {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.upload-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffc67b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}
+
+.add-photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.add-photo-box {
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-photo-box h4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.add-photo-form .form-group {
+    margin-bottom: 20px;
+}
+
+.add-photo-form label {
+    display: block;
+    font-weight: bold;
+}
+
+.add-photo-form input[type="file"],
+.add-photo-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-photo-form button[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-photo-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.photo-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.photo-container img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.photo-container form {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.photo-container .btn-delete-photo {
+    display: block;
+    padding: 5px;
+    margin: 0 auto;
+    font-size: 14px;
+    background-color: #ffc67b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.photo-container .btn-delete-photo:hover {
+    background-color: #0056b3;
+}
+
+.photo-container .btn-delete-photo img {
+    margin-right: 10px;
+}
+
+.upload-photo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.upload-photo-section h3 {
+    margin-bottom: 10px;
+}
+
+.upload-photo-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffc67b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    display: grid;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: #0056b3;
+}

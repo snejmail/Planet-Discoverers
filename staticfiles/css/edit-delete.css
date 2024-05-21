@@ -61,15 +61,10 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/*.delete-confirmation-box form {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    width: 100%;*/
-/*}*/
 .delete-confirmation-box form,
 .delete-confirmation-box a {
     display: inline-block;
-    margin-right: 10px; /* Add margin between the buttons if needed */
+    margin-right: 10px;
 }
 
 .delete-confirmation-box h2 {
