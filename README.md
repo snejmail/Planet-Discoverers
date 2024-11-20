@@ -2,19 +2,19 @@
 Website for uploading newly discovered exoplanets using Django web framework.
 
 ## Project setup:
-1. Clone the repo:
-  - git clone https:/github.com/snejmail/Planet-Discoverers
-  - cd Planet-Discoverers
+- Clone the repo:
+  git clone https:/github.com/snejmail/Planet-Discoverers
+  cd Planet-Discoverers
 
-3. Set up a virtual environment and activate it:
-  - python -m venv venv
-  - venv\Scripts\activate
+- Set up a virtual environment and activate it:
+  python -m venv venv
+  venv\Scripts\activate
 
-5. Install dependencies:
-  - pip install -r requirements.txt
+- Install dependencies:
+  pip install -r requirements.txt
 
-4. Change DB settings in settings.py
-  - DATABASES = {
+- Change DB settings in settings.py
+DATABASES = {
       "default": {
           "ENGINE": "django.db.backends.postgresql",
           "NAME": "your_db_name",
@@ -25,14 +25,14 @@ Website for uploading newly discovered exoplanets using Django web framework.
       }
   }
 
-5. Apply database migrations:
-  - python manage.py migrate
+- Apply database migrations:
+  python manage.py migrate
 
-6. Create a superuser:
-  - python manage.py createsuperuser
+- Create a superuser:
+  python manage.py createsuperuser
 
-7. Run the project:
-  - python manage.py runserver
+- Run the project:
+  python manage.py runserver
 
 ## Features
 - User-Friendly Interface: A simple and intuitive design for uploading and managing exoplanet discoveries.
