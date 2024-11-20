@@ -3,8 +3,8 @@ Website for uploading newly discovered exoplanets using Django web framework.
 
 ## Project setup:
 - Clone the repo:
-  git clone https:/github.com/snejmail/Planet-Discoverers
-  cd Planet-Discoverers
+  ```git clone https:/github.com/snejmail/Planet-Discoverers
+  ```cd Planet-Discoverers
 
 - Set up a virtual environment and activate it:
   python -m venv venv
