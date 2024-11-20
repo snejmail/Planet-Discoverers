@@ -14,7 +14,7 @@ Website for uploading newly discovered exoplanets using Django web framework.
     pip install -r requirements.txt  
 
 - Change DB settings in settings.py   
-  DATABASES = {  
+  `DATABASES = {  
         "default": {  
             "ENGINE": "django.db.backends.postgresql",  
             "NAME": "your_db_name",  
@@ -23,7 +23,7 @@ Website for uploading newly discovered exoplanets using Django web framework.
             "HOST": "127.0.0.1",  
             "PORT": "5432",  
         }  
-    }    
+    }  `  
 
 - Apply database migrations:  
     python manage.py migrate  
