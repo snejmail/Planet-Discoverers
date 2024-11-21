@@ -1,11 +1,6 @@
 # Planet-Discoverers
 Website for uploading newly discovered exoplanets using the Django web framework.
 
-## Features  
- - User-Friendly Interface: A simple and intuitive design for uploading and managing exoplanet discoveries.  
- - Image Uploads: Share images of the discovered exoplanets.  
- - Discovery Database: Keep track of all user-uploaded exoplanets with detailed information.
-
 ## Project Setup
 - **Clone the repo:**  
     ```bash
